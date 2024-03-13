@@ -1,0 +1,22 @@
+opam-version: "2.0"
+name:         "utime"
+maintainer:   [ "Romain Calascibetta <romain.calascibetta@gmail.com>" ]
+authors:      [ "Romain Calascibetta <romain.calascibetta@gmail.com>" ]
+homepage:     "https://git.robur.coop/robur/utime"
+bug-reports:  "https://git.robur.coop/robur/utime/issues"
+dev-repo:     "git+https://git.robur.coop/robur/utime.git"
+license:      "MIT"
+synopsis:     "A domain-safe highly precise timestamp counter"
+
+build: [
+  [ "dune" "build" "-p" name "-j" jobs ]
+  [ "dune" "runtest" "-p" name "-j" jobs ] {with-test}
+]
+install:  [
+  [ "dune" "install" "-p" name ] {with-test}
+]
+
+depends: [
+  "ocaml"           {>= "5.0.0"}
+  "dune"            {>= "2.6.0"}
+]

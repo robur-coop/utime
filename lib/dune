@@ -1,0 +1,8 @@
+(library
+ (name utime)
+ (modules utime)
+ (public_name utime)
+ (foreign_stubs
+  (language c)
+  (names tscclock)
+  (flags :standard)))
